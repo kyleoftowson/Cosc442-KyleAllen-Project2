@@ -15,7 +15,7 @@ public class Point {
 	 * @param y the y
 	 */
 	Point(Double x, Double y) {
-		this.x = y;
+		this.x = x;
 		this.y = y;
 	}
 }
