@@ -24,6 +24,7 @@ public class VendingMachineItemTest {
 	}
 
 	@After
+	
 	public void tearDown() throws Exception {
 		item = null;
 		item4 = null;
@@ -31,7 +32,9 @@ public class VendingMachineItemTest {
 		item2 = null;
 		item1 = null;
 	}
-
+/**
+ * This tests that the method works coreectly as well as if it recieves a negative number
+ */
 	@Test
 	public void testVendingMachineItem() {
 		assertTrue(item.getName().equals("chips") && item.getPrice() == 89);
@@ -41,7 +44,9 @@ public class VendingMachineItemTest {
 			assertTrue(e.getMessage().equals("Price cannot be less than zero"));
 		}
 	}
-
+/**
+ * It makes sure the name is what it was entered as. 
+ */
 	@Test
 	public void testGetName() {
 		assertTrue(item.getName().equals("chips"));
@@ -52,20 +57,24 @@ public class VendingMachineItemTest {
 	}
 
 	@Test
-
+/**
+ * This tests that the price is what it was when it was entered. It also tests what happens when the price is negative when entered.
+ */
 	public void testGetPrice() {
 		assertTrue(item.getPrice() == 89);
-		assertTrue(item.getPrice() == 32);
-		assertTrue(item.getPrice() == 9);
-		assertTrue(item.getPrice() == 90.64);
-		assertTrue(item.getPrice() == 0);
-		VendingMachineItem item9;
+		assertTrue(item1.getPrice() == 32);
+		assertTrue(item2.getPrice() == 9);
+		assertTrue(item3.getPrice() == 90.64);
+		assertTrue(item4.getPrice() == 0);
+		VendingMachineItem item9 = null;
 		try {
 			item9 = new VendingMachineItem(" ", -8);
 		} catch (Exception e) {
 			assertTrue(e.getMessage().equals("Price cannot be less than zero"));
 		}
-
+		
+		
+		
 	}
 
 }

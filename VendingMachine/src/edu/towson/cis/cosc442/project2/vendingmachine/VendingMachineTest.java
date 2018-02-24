@@ -43,6 +43,10 @@ public class VendingMachineTest {
 	}
 
 	/**
+	 * 
+	 * 
+	 * 
+	 * 
 	 * @throws java.lang.Exception
 	 */
 	@After
@@ -57,7 +61,9 @@ public class VendingMachineTest {
 		vm2 = null;
 		vm1 = null;
 	}
-
+/**
+ * This tests if an invalid code is entered, and that it works normally as well.
+ */
 	@Test
 	public void testAddItem() {
 
@@ -81,7 +87,10 @@ public class VendingMachineTest {
 		}
 
 	}
-
+/**
+ * This tests when the item is removed with the wrong code, and the right code
+ * It tests if something is occupying the slot also.
+ */
 	@Test
 	public void testRemoveItem() {
 		// * Removes an item from the vending machine given its code.
@@ -112,7 +121,9 @@ public class VendingMachineTest {
 		}
 
 	}
-
+	/**
+	 * This tests when the money inserted is 0, when the balence is negative, and that it works corectly
+	 */
 	@Test
 	public void testInsertMoney() {
 		vm.balance = 0;
@@ -133,7 +144,11 @@ public class VendingMachineTest {
 		assertTrue(vm4.balance == 70);
 
 	}
-
+/**
+ * Thiis tests when the balence is greater, equal to and lower than 0 before method starts
+ * 
+ * It also tests that the balence is what it was before
+ */
 	@Test
 	public void testGetBalance() {
 		// pre >
@@ -153,7 +168,11 @@ public class VendingMachineTest {
 		assertTrue(vm3.getBalance() == 0);
 		assertTrue(vm3.balance == 0);
 	}
-
+/**
+ * This tests if the code returns false if not enough money and if it is an empty slot. It tests
+ *  if it returns true for if there is enough money. It tests if the amount of money is subtracted from the balence. It also tests that the 
+ *  the method works.. 
+ */
 	@Test
 	public void testMakePurchase() {
 
@@ -186,6 +205,10 @@ public class VendingMachineTest {
 	}
 
 	@Test
+	/**
+	 * This test tests if return change works if the balence is negative, zero or positive. It also tests if the balence
+	 * is zero afterwards.
+	 */
 	public void testReturnChange() {
 		// =0
 		assertTrue(vm.returnChange() == 0);
