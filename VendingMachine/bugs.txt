@@ -1,0 +1,2 @@
+fixed getBalence() in VendingMachine it needed to react to q condition where the baqlence is less than 0
+
